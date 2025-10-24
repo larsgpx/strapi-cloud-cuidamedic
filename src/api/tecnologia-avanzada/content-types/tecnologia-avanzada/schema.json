@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "tecnologia_avanzadas",
+  "info": {
+    "singularName": "tecnologia-avanzada",
+    "pluralName": "tecnologia-avanzadas",
+    "displayName": "Exion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "TituloBanner": {
+      "type": "string"
+    },
+    "SubtituloBanner": {
+      "type": "text"
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "Subtitulo": {
+      "type": "text"
+    },
+    "Tratamientos": {
+      "type": "component",
+      "component": "tratamientos.tratamiento-especial",
+      "repeatable": true
+    }
+  }
+}

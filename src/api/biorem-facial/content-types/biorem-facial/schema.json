@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "biorem_faciales",
+  "info": {
+    "singularName": "biorem-facial",
+    "pluralName": "biorem-faciales",
+    "displayName": "BioremFaciales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

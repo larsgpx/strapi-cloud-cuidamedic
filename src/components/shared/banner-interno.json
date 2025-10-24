@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_banner_internos",
+  "info": {
+    "displayName": "bannerInterno",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "exosomas_corporales",
+  "info": {
+    "singularName": "exosomas-corporal",
+    "pluralName": "exosomas-corporales",
+    "displayName": "ExosomasCorporales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

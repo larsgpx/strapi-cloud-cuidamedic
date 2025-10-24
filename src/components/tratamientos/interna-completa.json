@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_tratamientos_interna_completas",
+  "info": {
+    "displayName": "InternaCompleta",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "TituloBanner": {
+      "type": "string"
+    },
+    "SubtituloBanner": {
+      "type": "text"
+    },
+    "ImagenBanner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "Subtitulo": {
+      "type": "string"
+    },
+    "Tabs": {
+      "type": "component",
+      "component": "tratamientos.tabs",
+      "repeatable": true
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "UrlBoton": {
+      "type": "string"
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

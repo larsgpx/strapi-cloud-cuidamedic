@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "enzimas_faciales",
+  "info": {
+    "singularName": "enzima-facial",
+    "pluralName": "enzimas-faciales",
+    "displayName": "EnzimasFaciales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

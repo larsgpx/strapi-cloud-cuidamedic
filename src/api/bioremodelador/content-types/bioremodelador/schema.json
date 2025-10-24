@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "bioremodeladors",
+  "info": {
+    "singularName": "bioremodelador",
+    "pluralName": "bioremodeladors",
+    "displayName": "Bioremodelador"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

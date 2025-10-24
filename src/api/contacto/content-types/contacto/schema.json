@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactanos",
+  "info": {
+    "singularName": "contacto",
+    "pluralName": "contactanos",
+    "displayName": "Contactanos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Horario": {
+      "type": "string"
+    },
+    "Telefono": {
+      "type": "string"
+    },
+    "Correo": {
+      "type": "string"
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

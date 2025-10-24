@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "mesoterapia_corporals",
+  "info": {
+    "singularName": "mesoterapia-corporal",
+    "pluralName": "mesoterapia-corporals",
+    "displayName": "MesoterapiaCorporal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

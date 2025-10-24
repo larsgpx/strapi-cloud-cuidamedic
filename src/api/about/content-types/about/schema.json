@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
+    "displayName": "Nosotros",
     "description": "Write about yourself and the content you create"
   },
   "options": {
@@ -15,9 +15,22 @@
     "title": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "highlights": {
+      "type": "component",
+      "component": "shared.highlight",
+      "repeatable": true,
+      "max": 3
+    },
+    "quienesSomos": {
+      "type": "text"
+    },
+    "Historia": {
+      "type": "text"
+    },
+    "Doctores": {
+      "type": "component",
+      "component": "shared.doctores",
+      "repeatable": true
     }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "biorem_corporals",
+  "info": {
+    "singularName": "biorem-corporal",
+    "pluralName": "biorem-corporals",
+    "displayName": "BioremCorporal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

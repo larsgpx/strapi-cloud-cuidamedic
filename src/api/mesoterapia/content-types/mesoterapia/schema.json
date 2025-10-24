@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "mesoterapias",
+  "info": {
+    "singularName": "mesoterapia",
+    "pluralName": "mesoterapias",
+    "displayName": "Mesoterapia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "tratamientos": {
+      "type": "component",
+      "component": "tratamientos.tratamientos",
+      "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

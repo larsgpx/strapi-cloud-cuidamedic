@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "toxinas",
+  "info": {
+    "singularName": "toxina",
+    "pluralName": "toxinas",
+    "displayName": "Toxina"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Contenido": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

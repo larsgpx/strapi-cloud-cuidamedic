@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_doctores",
+  "info": {
+    "displayName": "Doctores",
+    "icon": "doctor"
+  },
+  "options": {},
+  "attributes": {
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "puesto": {
+      "type": "string"
+    },
+    "especialidad": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

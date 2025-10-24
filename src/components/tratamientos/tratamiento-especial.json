@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_tratamientos_tratamiento_especials",
+  "info": {
+    "displayName": "tratamientoEspecial",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Tabs": {
+      "type": "component",
+      "component": "tratamientos.tabs",
+      "repeatable": true
+    },
+    "UrlBoton": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

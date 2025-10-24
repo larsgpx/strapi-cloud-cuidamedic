@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "acido_hialuricos",
+  "info": {
+    "singularName": "acido-hialurico",
+    "pluralName": "acido-hialuricos",
+    "displayName": "AcidoHialurico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}
