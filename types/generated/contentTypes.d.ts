@@ -920,6 +920,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
     Servicios: Schema.Attribute.Component<'shared.servicios', true>;
     testimonios: Schema.Attribute.Component<'shared.quote', true>;
     titlePorqueElegirnos: Schema.Attribute.String;
@@ -1038,6 +1039,37 @@ export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
       'api::mesoterapia.mesoterapia'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSucursalSucursal extends Struct.CollectionTypeSchema {
+  collectionName: 'sucursales';
+  info: {
+    displayName: 'Sucursales';
+    pluralName: 'sucursales';
+    singularName: 'sucursal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Boton: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Direccion: Schema.Attribute.String;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sucursal.sucursal'
+    > &
+      Schema.Attribute.Private;
+    Lugar: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1643,6 +1675,7 @@ declare module '@strapi/strapi' {
       'api::marca.marca': ApiMarcaMarca;
       'api::mesoterapia-corporal.mesoterapia-corporal': ApiMesoterapiaCorporalMesoterapiaCorporal;
       'api::mesoterapia.mesoterapia': ApiMesoterapiaMesoterapia;
+      'api::sucursal.sucursal': ApiSucursalSucursal;
       'api::tecnologia-avanzada.tecnologia-avanzada': ApiTecnologiaAvanzadaTecnologiaAvanzada;
       'api::toxina.toxina': ApiToxinaToxina;
       'plugin::content-releases.release': PluginContentReleasesRelease;

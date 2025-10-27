@@ -52,6 +52,11 @@
       "type": "component",
       "component": "shared.quote",
       "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

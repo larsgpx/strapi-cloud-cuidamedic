@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sucursales",
+  "info": {
+    "singularName": "sucursal",
+    "pluralName": "sucursales",
+    "displayName": "Sucursales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Lugar": {
+      "type": "string"
+    },
+    "Direccion": {
+      "type": "string"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Boton": {
+      "type": "string"
+    }
+  }
+}
