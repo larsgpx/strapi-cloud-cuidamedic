@@ -13,6 +13,19 @@ export interface SharedBannerInterno extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBannerSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_banner_sliders';
+  info: {
+    displayName: 'BannerSlider';
+    icon: 'picture';
+  };
+  attributes: {
+    Banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitulo: Schema.Attribute.Text;
+    Titulo: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedCasos extends Struct.ComponentSchema {
   collectionName: 'components_shared_casos';
   info: {
@@ -148,7 +161,13 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Subtitulo: Schema.Attribute.String;
     SubtituloBanner: Schema.Attribute.Text;
-    Tabs: Schema.Attribute.Component<'tratamientos.tabs', true>;
+    Tabs: Schema.Attribute.Component<'tratamientos.tabs', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
     Titulo: Schema.Attribute.String;
     TituloBanner: Schema.Attribute.String;
     UrlBoton: Schema.Attribute.String;
@@ -161,7 +180,10 @@ export interface TratamientosTabs extends Struct.ComponentSchema {
     displayName: 'tabs';
     icon: 'folder';
   };
-  attributes: {};
+  attributes: {
+    descripcion: Schema.Attribute.Text;
+    Titulo: Schema.Attribute.String;
+  };
 }
 
 export interface TratamientosTratamientoEspecial
@@ -185,18 +207,14 @@ export interface TratamientosTratamientos extends Struct.ComponentSchema {
     displayName: 'Tratamientos';
     icon: 'user';
   };
-  attributes: {
-    botonCita: Schema.Attribute.String;
-    descripcion: Schema.Attribute.RichText;
-    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    titulo: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.banner-interno': SharedBannerInterno;
+      'shared.banner-slider': SharedBannerSlider;
       'shared.casos': SharedCasos;
       'shared.doctores': SharedDoctores;
       'shared.highlight': SharedHighlight;

@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "Banner": {
+      "type": "component",
+      "component": "shared.banner-slider",
+      "repeatable": true
+    },
     "titlePorqueElegirnos": {
       "type": "string"
     },

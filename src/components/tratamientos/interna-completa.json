@@ -28,11 +28,6 @@
     "Subtitulo": {
       "type": "string"
     },
-    "Tabs": {
-      "type": "component",
-      "component": "tratamientos.tabs",
-      "repeatable": true
-    },
     "Imagen": {
       "type": "media",
       "multiple": false,
@@ -42,6 +37,12 @@
         "videos",
         "audios"
       ]
+    },
+    "Tabs": {
+      "type": "component",
+      "component": "tratamientos.tabs",
+      "repeatable": true,
+      "max": 2
     },
     "UrlBoton": {
       "type": "string"

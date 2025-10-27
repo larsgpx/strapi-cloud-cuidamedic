@@ -4,27 +4,16 @@
   "info": {
     "singularName": "mesoterapia",
     "pluralName": "mesoterapias",
-    "displayName": "Mesoterapia"
+    "displayName": "Mesoterapias Faciales"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "titulo": {
-      "type": "string"
-    },
-    "subtitulo": {
-      "type": "text"
-    },
-    "tratamientos": {
+    "Interna": {
       "type": "component",
-      "component": "tratamientos.tratamientos",
-      "repeatable": true
-    },
-    "Seo": {
-      "type": "component",
-      "component": "shared.seo",
+      "component": "tratamientos.interna-completa",
       "repeatable": false
     }
   }

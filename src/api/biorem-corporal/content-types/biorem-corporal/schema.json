@@ -4,7 +4,7 @@
   "info": {
     "singularName": "biorem-corporal",
     "pluralName": "biorem-corporals",
-    "displayName": "BioremCorporal"
+    "displayName": "Biorem bioremodelador Corporal"
   },
   "options": {
     "draftAndPublish": true

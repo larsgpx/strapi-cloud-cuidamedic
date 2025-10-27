@@ -459,6 +459,8 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     quienesSomos: Schema.Attribute.Text;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    subtitulo: Schema.Attribute.Text;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -470,7 +472,7 @@ export interface ApiAcidoHialuricoAcidoHialurico
   extends Struct.SingleTypeSchema {
   collectionName: 'acido_hialuricos';
   info: {
-    displayName: 'AcidoHialurico';
+    displayName: 'Acido Hialuronico';
     pluralName: 'acido-hialuricos';
     singularName: 'acido-hialurico';
   };
@@ -571,7 +573,7 @@ export interface ApiBioremCorporalBioremCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'biorem_corporals';
   info: {
-    displayName: 'BioremCorporal';
+    displayName: 'Biorem bioremodelador Corporal';
     pluralName: 'biorem-corporals';
     singularName: 'biorem-corporal';
   };
@@ -599,7 +601,7 @@ export interface ApiBioremCorporalBioremCorporal
 export interface ApiBioremFacialBioremFacial extends Struct.SingleTypeSchema {
   collectionName: 'biorem_faciales';
   info: {
-    displayName: 'BioremFaciales';
+    displayName: 'Biorem Bioestimulador Faciales';
     pluralName: 'biorem-faciales';
     singularName: 'biorem-facial';
   };
@@ -750,7 +752,7 @@ export interface ApiEnzimaCorporalEnzimaCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'enzimas_corporales';
   info: {
-    displayName: 'EnzimasCorporales';
+    displayName: 'Enzimas Corporales';
     pluralName: 'enzimas-corporales';
     singularName: 'enzima-corporal';
   };
@@ -778,7 +780,7 @@ export interface ApiEnzimaCorporalEnzimaCorporal
 export interface ApiEnzimaFacialEnzimaFacial extends Struct.SingleTypeSchema {
   collectionName: 'enzimas_faciales';
   info: {
-    displayName: 'EnzimasFaciales';
+    displayName: 'Enzimas Faciales';
     pluralName: 'enzimas-faciales';
     singularName: 'enzima-facial';
   };
@@ -835,7 +837,7 @@ export interface ApiExosomasCorporalExosomasCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'exosomas_corporales';
   info: {
-    displayName: 'ExosomasCorporales';
+    displayName: 'Exosomas Corporales';
     pluralName: 'exosomas-corporales';
     singularName: 'exosomas-corporal';
   };
@@ -903,6 +905,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Banner: Schema.Attribute.Component<'shared.banner-slider', true>;
     botonSolicitudEvaluacion: Schema.Attribute.String;
     casosDeExito: Schema.Attribute.Component<'shared.casos', true>;
     casosDeExitoDescription: Schema.Attribute.Blocks;
@@ -930,7 +933,7 @@ export interface ApiLimpiezaFacialLimpiezaFacial
   extends Struct.SingleTypeSchema {
   collectionName: 'limpiezas_faciales';
   info: {
-    displayName: 'LimpiezasFaciales';
+    displayName: 'Limpiezas Faciales';
     pluralName: 'limpiezas-faciales';
     singularName: 'limpieza-facial';
   };
@@ -949,6 +952,9 @@ export interface ApiLimpiezaFacialLimpiezaFacial
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    subtitulo: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
     Tratamientos: Schema.Attribute.Component<'tratamientos.tratamientos', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -986,7 +992,7 @@ export interface ApiMesoterapiaCorporalMesoterapiaCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'mesoterapia_corporals';
   info: {
-    displayName: 'MesoterapiaCorporal';
+    displayName: 'Mesoterapia Corporal';
     pluralName: 'mesoterapia-corporals';
     singularName: 'mesoterapia-corporal';
   };
@@ -1014,7 +1020,7 @@ export interface ApiMesoterapiaCorporalMesoterapiaCorporal
 export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
   collectionName: 'mesoterapias';
   info: {
-    displayName: 'Mesoterapia';
+    displayName: 'Mesoterapias Faciales';
     pluralName: 'mesoterapias';
     singularName: 'mesoterapia';
   };
@@ -1025,6 +1031,7 @@ export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Interna: Schema.Attribute.Component<'tratamientos.interna-completa', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1032,10 +1039,6 @@ export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
-    subtitulo: Schema.Attribute.Text;
-    titulo: Schema.Attribute.String;
-    tratamientos: Schema.Attribute.Component<'tratamientos.tratamientos', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

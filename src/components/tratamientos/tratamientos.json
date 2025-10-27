@@ -5,26 +5,6 @@
     "icon": "user"
   },
   "options": {},
-  "attributes": {
-    "titulo": {
-      "type": "string"
-    },
-    "descripcion": {
-      "type": "richtext"
-    },
-    "imagen": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "botonCita": {
-      "type": "string"
-    }
-  },
+  "attributes": {},
   "config": {}
 }

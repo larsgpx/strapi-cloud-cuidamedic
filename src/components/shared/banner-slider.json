@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_banner_sliders",
+  "info": {
+    "displayName": "BannerSlider",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "blocks"
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "Banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

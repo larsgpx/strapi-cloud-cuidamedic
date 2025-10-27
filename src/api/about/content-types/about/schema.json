@@ -15,6 +15,9 @@
     "title": {
       "type": "string"
     },
+    "subtitulo": {
+      "type": "text"
+    },
     "highlights": {
       "type": "component",
       "component": "shared.highlight",
@@ -31,6 +34,11 @@
       "type": "component",
       "component": "shared.doctores",
       "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

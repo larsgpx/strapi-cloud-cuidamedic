@@ -5,6 +5,13 @@
     "icon": "folder"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  },
   "config": {}
 }
