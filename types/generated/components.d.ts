@@ -109,7 +109,10 @@ export interface SharedSeo extends Struct.ComponentSchema {
     icon: 'allergies';
     name: 'Seo';
   };
-  attributes: {};
+  attributes: {
+    descripcion: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
+  };
 }
 
 export interface SharedServicios extends Struct.ComponentSchema {
@@ -158,6 +161,7 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     ImagenBanner: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    preguntas: Schema.Attribute.Component<'tratamientos.faq', true>;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Subtitulo: Schema.Attribute.String;
     SubtituloBanner: Schema.Attribute.Text;

@@ -7,5 +7,12 @@
     "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    }
+  }
 }

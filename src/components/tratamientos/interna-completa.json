@@ -47,6 +47,11 @@
     "UrlBoton": {
       "type": "string"
     },
+    "preguntas": {
+      "type": "component",
+      "component": "tratamientos.faq",
+      "repeatable": true
+    },
     "Seo": {
       "type": "component",
       "component": "shared.seo",
