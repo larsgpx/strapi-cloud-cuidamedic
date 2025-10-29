@@ -1136,6 +1136,7 @@ export interface ApiTecnologiaAvanzadaTecnologiaAvanzada
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
     Subtitulo: Schema.Attribute.Text;
     SubtituloBanner: Schema.Attribute.Text;
     Titulo: Schema.Attribute.String;
