@@ -43,6 +43,9 @@
     },
     "InstagramUrl": {
       "type": "string"
+    },
+    "UrlEvaluacionGratuita": {
+      "type": "string"
     }
   }
 }
