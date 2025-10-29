@@ -13,6 +13,10 @@
     },
     "descripcion": {
       "type": "text"
+    },
+    "keywords": {
+      "type": "string",
+      "maxLength": 80
     }
   }
 }

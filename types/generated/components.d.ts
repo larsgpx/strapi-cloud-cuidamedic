@@ -111,6 +111,10 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
   attributes: {
     descripcion: Schema.Attribute.Text;
+    keywords: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
     titulo: Schema.Attribute.String;
   };
 }
@@ -147,7 +151,10 @@ export interface TratamientosFaq extends Struct.ComponentSchema {
     displayName: 'faq';
     icon: 'bulletList';
   };
-  attributes: {};
+  attributes: {
+    pregunta: Schema.Attribute.String;
+    respuesta: Schema.Attribute.Text;
+  };
 }
 
 export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
@@ -164,7 +171,6 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     preguntas: Schema.Attribute.Component<'tratamientos.faq', true>;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Subtitulo: Schema.Attribute.String;
-    SubtituloBanner: Schema.Attribute.Text;
     Tabs: Schema.Attribute.Component<'tratamientos.tabs', true> &
       Schema.Attribute.SetMinMax<
         {
@@ -173,7 +179,6 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
         number
       >;
     Titulo: Schema.Attribute.String;
-    TituloBanner: Schema.Attribute.String;
     UrlBoton: Schema.Attribute.String;
   };
 }
@@ -185,7 +190,7 @@ export interface TratamientosTabs extends Struct.ComponentSchema {
     icon: 'folder';
   };
   attributes: {
-    descripcion: Schema.Attribute.Text;
+    descripcion: Schema.Attribute.Blocks;
     Titulo: Schema.Attribute.String;
   };
 }
@@ -208,10 +213,15 @@ export interface TratamientosTratamientoEspecial
 export interface TratamientosTratamientos extends Struct.ComponentSchema {
   collectionName: 'components_tratamientos_tratamientos';
   info: {
-    displayName: 'Tratamientos';
+    displayName: 'Simple';
     icon: 'user';
   };
-  attributes: {};
+  attributes: {
+    boton: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titulo: Schema.Attribute.String;
+  };
 }
 
 declare module '@strapi/strapi' {

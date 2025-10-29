@@ -18,17 +18,37 @@
     "subtitulo": {
       "type": "text"
     },
+    "ImagenBanner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "highlights": {
       "type": "component",
       "component": "shared.highlight",
       "repeatable": true,
       "max": 3
     },
-    "quienesSomos": {
-      "type": "text"
-    },
     "Historia": {
-      "type": "text"
+      "type": "blocks"
+    },
+    "quienesSomos": {
+      "type": "blocks"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Doctores": {
       "type": "component",

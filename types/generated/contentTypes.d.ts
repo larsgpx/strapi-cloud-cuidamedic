@@ -453,12 +453,16 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         },
         number
       >;
-    Historia: Schema.Attribute.Text;
+    Historia: Schema.Attribute.Blocks;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ImagenBanner: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    quienesSomos: Schema.Attribute.Text;
+    quienesSomos: Schema.Attribute.Blocks;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     subtitulo: Schema.Attribute.Text;
     title: Schema.Attribute.String;
@@ -510,18 +514,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
+    description: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -529,6 +527,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    resumen: Schema.Attribute.Text;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -704,6 +704,7 @@ export interface ApiContactoContacto extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Horario: Schema.Attribute.String;
+    Horario2: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -878,7 +879,9 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    FacebookUrl: Schema.Attribute.String;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    InstagramUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -888,6 +891,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    TiktokUrl: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -923,7 +927,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Servicios: Schema.Attribute.Component<'shared.servicios', true>;
     testimonios: Schema.Attribute.Component<'shared.quote', true>;
-    titlePorqueElegirnos: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1012,6 +1015,39 @@ export interface ApiMesoterapiaCorporalMesoterapiaCorporal
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMesoterapiaYCocktailMesoterapiaYCocktail
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mesoterapia_y_cocktails';
+  info: {
+    displayName: 'Mesoterapia y Cocktails';
+    pluralName: 'mesoterapia-y-cocktails';
+    singularName: 'mesoterapia-y-cocktail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mesoterapia-y-cocktail.mesoterapia-y-cocktail'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    subtitulo: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
+    Tratamientos: Schema.Attribute.Component<'tratamientos.tratamientos', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1674,6 +1710,7 @@ declare module '@strapi/strapi' {
       'api::limpieza-facial.limpieza-facial': ApiLimpiezaFacialLimpiezaFacial;
       'api::marca.marca': ApiMarcaMarca;
       'api::mesoterapia-corporal.mesoterapia-corporal': ApiMesoterapiaCorporalMesoterapiaCorporal;
+      'api::mesoterapia-y-cocktail.mesoterapia-y-cocktail': ApiMesoterapiaYCocktailMesoterapiaYCocktail;
       'api::mesoterapia.mesoterapia': ApiMesoterapiaMesoterapia;
       'api::sucursal.sucursal': ApiSucursalSucursal;
       'api::tecnologia-avanzada.tecnologia-avanzada': ApiTecnologiaAvanzadaTecnologiaAvanzada;

@@ -1,10 +1,30 @@
 {
   "collectionName": "components_tratamientos_tratamientos",
   "info": {
-    "displayName": "Tratamientos",
+    "displayName": "Simple",
     "icon": "user"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "boton": {
+      "type": "string"
+    }
+  },
   "config": {}
 }

@@ -16,9 +16,6 @@
       "component": "shared.banner-slider",
       "repeatable": true
     },
-    "titlePorqueElegirnos": {
-      "type": "string"
-    },
     "porqueElegirnosDescription": {
       "type": "blocks"
     },

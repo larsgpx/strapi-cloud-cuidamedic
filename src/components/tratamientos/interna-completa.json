@@ -6,12 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "TituloBanner": {
-      "type": "string"
-    },
-    "SubtituloBanner": {
-      "type": "text"
-    },
     "ImagenBanner": {
       "type": "media",
       "multiple": false,
