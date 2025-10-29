@@ -20,7 +20,7 @@
       "type": "string"
     },
     "Subtitulo": {
-      "type": "string"
+      "type": "text"
     },
     "Imagen": {
       "type": "media",

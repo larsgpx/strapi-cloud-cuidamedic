@@ -170,7 +170,7 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     >;
     preguntas: Schema.Attribute.Component<'tratamientos.faq', true>;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
-    Subtitulo: Schema.Attribute.String;
+    Subtitulo: Schema.Attribute.Text;
     Tabs: Schema.Attribute.Component<'tratamientos.tabs', true> &
       Schema.Attribute.SetMinMax<
         {
