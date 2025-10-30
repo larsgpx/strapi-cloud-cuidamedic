@@ -1083,6 +1083,50 @@ export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNosotrosNosotros extends Struct.SingleTypeSchema {
+  collectionName: 'nosotross';
+  info: {
+    displayName: 'SobreNosotros';
+    pluralName: 'nosotross';
+    singularName: 'nosotros';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Doctores: Schema.Attribute.Component<'shared.doctores', true>;
+    highlights: Schema.Attribute.Component<'shared.highlight', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+    Historia: Schema.Attribute.Blocks;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imagenBanner: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros.nosotros'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    quienesSomos: Schema.Attribute.Blocks;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    subtitulo: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSucursalSucursal extends Struct.CollectionTypeSchema {
   collectionName: 'sucursales';
   info: {
@@ -1714,6 +1758,7 @@ declare module '@strapi/strapi' {
       'api::mesoterapia-corporal.mesoterapia-corporal': ApiMesoterapiaCorporalMesoterapiaCorporal;
       'api::mesoterapia-y-cocktail.mesoterapia-y-cocktail': ApiMesoterapiaYCocktailMesoterapiaYCocktail;
       'api::mesoterapia.mesoterapia': ApiMesoterapiaMesoterapia;
+      'api::nosotros.nosotros': ApiNosotrosNosotros;
       'api::sucursal.sucursal': ApiSucursalSucursal;
       'api::tecnologia-avanzada.tecnologia-avanzada': ApiTecnologiaAvanzadaTecnologiaAvanzada;
       'api::toxina.toxina': ApiToxinaToxina;

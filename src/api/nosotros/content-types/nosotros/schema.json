@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "nosotross",
+  "info": {
+    "singularName": "nosotros",
+    "pluralName": "nosotross",
+    "displayName": "SobreNosotros"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "imagenBanner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "highlights": {
+      "type": "component",
+      "component": "shared.highlight",
+      "repeatable": true,
+      "max": 3
+    },
+    "Historia": {
+      "type": "blocks"
+    },
+    "quienesSomos": {
+      "type": "blocks"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Doctores": {
+      "type": "component",
+      "component": "shared.doctores",
+      "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}
