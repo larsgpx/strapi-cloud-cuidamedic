@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_check_lists",
+  "info": {
+    "displayName": "CheckList",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Texto": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

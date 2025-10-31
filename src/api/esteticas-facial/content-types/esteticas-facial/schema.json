@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "esteticas_faciales",
+  "info": {
+    "singularName": "esteticas-facial",
+    "pluralName": "esteticas-faciales",
+    "displayName": "Esteticas Faciales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "Servicios": {
+      "type": "component",
+      "component": "shared.servicios-esteticos",
+      "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

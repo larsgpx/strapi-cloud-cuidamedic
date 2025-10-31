@@ -54,6 +54,21 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "highlight1contador": {
+      "type": "string"
+    },
+    "highlight1": {
+      "type": "string"
+    },
+    "highlight2": {
+      "type": "string"
+    },
+    "highlight3": {
+      "type": "string"
+    },
+    "highlight4": {
+      "type": "string"
     }
   }
 }

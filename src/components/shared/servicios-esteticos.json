@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_servicios_esteticos",
+  "info": {
+    "displayName": "Servicios Esteticos",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

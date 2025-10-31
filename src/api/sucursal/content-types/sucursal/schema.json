@@ -29,6 +29,12 @@
     },
     "Boton": {
       "type": "string"
+    },
+    "longitud": {
+      "type": "decimal"
+    },
+    "latitud": {
+      "type": "decimal"
     }
   }
 }

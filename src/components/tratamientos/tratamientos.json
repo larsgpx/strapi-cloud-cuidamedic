@@ -24,6 +24,11 @@
     },
     "boton": {
       "type": "string"
+    },
+    "Checklist": {
+      "type": "component",
+      "component": "shared.check-list",
+      "repeatable": true
     }
   },
   "config": {}

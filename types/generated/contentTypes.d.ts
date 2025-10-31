@@ -430,48 +430,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
-  info: {
-    description: 'Write about yourself and the content you create';
-    displayName: 'Nosotros';
-    pluralName: 'abouts';
-    singularName: 'about';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Doctores: Schema.Attribute.Component<'shared.doctores', true>;
-    highlights: Schema.Attribute.Component<'shared.highlight', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 3;
-        },
-        number
-      >;
-    Historia: Schema.Attribute.Blocks;
-    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ImagenBanner: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    quienesSomos: Schema.Attribute.Blocks;
-    Seo: Schema.Attribute.Component<'shared.seo', false>;
-    subtitulo: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAcidoHialuricoAcidoHialurico
   extends Struct.SingleTypeSchema {
   collectionName: 'acido_hialuricos';
@@ -806,6 +764,70 @@ export interface ApiEnzimaFacialEnzimaFacial extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEsteticasCorporalEsteticasCorporal
+  extends Struct.SingleTypeSchema {
+  collectionName: 'esteticas_corporales';
+  info: {
+    displayName: 'Esteticas Corporales';
+    pluralName: 'esteticas-corporales';
+    singularName: 'esteticas-corporal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::esteticas-corporal.esteticas-corporal'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    Servicios: Schema.Attribute.Component<'shared.servicios-esteticos', true>;
+    Titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEsteticasFacialEsteticasFacial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'esteticas_faciales';
+  info: {
+    displayName: 'Esteticas Faciales';
+    pluralName: 'esteticas-faciales';
+    singularName: 'esteticas-facial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::esteticas-facial.esteticas-facial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    Servicios: Schema.Attribute.Component<'shared.servicios-esteticos', true>;
+    Titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExosomaExosoma extends Struct.SingleTypeSchema {
   collectionName: 'exosomas';
   info: {
@@ -891,11 +913,13 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    TextoEvaluacionGratuita: Schema.Attribute.String;
     TiktokUrl: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     UrlEvaluacionGratuita: Schema.Attribute.String;
+    whatsappPopUp: Schema.Attribute.String;
   };
 }
 
@@ -917,6 +941,11 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    highlight1: Schema.Attribute.String;
+    highlight1contador: Schema.Attribute.String;
+    highlight2: Schema.Attribute.String;
+    highlight3: Schema.Attribute.String;
+    highlight4: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
@@ -1144,12 +1173,14 @@ export interface ApiSucursalSucursal extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Direccion: Schema.Attribute.String;
     Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    latitud: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sucursal.sucursal'
     > &
       Schema.Attribute.Private;
+    longitud: Schema.Attribute.Decimal;
     Lugar: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1737,7 +1768,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about.about': ApiAboutAbout;
       'api::acido-hialurico.acido-hialurico': ApiAcidoHialuricoAcidoHialurico;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
@@ -1749,6 +1779,8 @@ declare module '@strapi/strapi' {
       'api::endovenoso.endovenoso': ApiEndovenosoEndovenoso;
       'api::enzima-corporal.enzima-corporal': ApiEnzimaCorporalEnzimaCorporal;
       'api::enzima-facial.enzima-facial': ApiEnzimaFacialEnzimaFacial;
+      'api::esteticas-corporal.esteticas-corporal': ApiEsteticasCorporalEsteticasCorporal;
+      'api::esteticas-facial.esteticas-facial': ApiEsteticasFacialEsteticasFacial;
       'api::exosoma.exosoma': ApiExosomaExosoma;
       'api::exosomas-corporal.exosomas-corporal': ApiExosomasCorporalExosomasCorporal;
       'api::global.global': ApiGlobalGlobal;

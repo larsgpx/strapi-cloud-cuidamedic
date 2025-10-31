@@ -46,6 +46,12 @@
     },
     "UrlEvaluacionGratuita": {
       "type": "string"
+    },
+    "TextoEvaluacionGratuita": {
+      "type": "string"
+    },
+    "whatsappPopUp": {
+      "type": "string"
     }
   }
 }

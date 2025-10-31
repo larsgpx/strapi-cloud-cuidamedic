@@ -39,6 +39,17 @@ export interface SharedCasos extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCheckList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_check_lists';
+  info: {
+    displayName: 'CheckList';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Texto: Schema.Attribute.String;
+  };
+}
+
 export interface SharedDoctores extends Struct.ComponentSchema {
   collectionName: 'components_shared_doctores';
   info: {
@@ -133,6 +144,19 @@ export interface SharedServicios extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedServiciosEsteticos extends Struct.ComponentSchema {
+  collectionName: 'components_shared_servicios_esteticos';
+  info: {
+    displayName: 'Servicios Esteticos';
+    icon: 'apps';
+  };
+  attributes: {
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Titulo: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -190,6 +214,7 @@ export interface TratamientosTabs extends Struct.ComponentSchema {
     icon: 'folder';
   };
   attributes: {
+    Checklist: Schema.Attribute.Component<'shared.check-list', true>;
     descripcion: Schema.Attribute.Blocks;
     Titulo: Schema.Attribute.String;
   };
@@ -218,6 +243,7 @@ export interface TratamientosTratamientos extends Struct.ComponentSchema {
   };
   attributes: {
     boton: Schema.Attribute.String;
+    Checklist: Schema.Attribute.Component<'shared.check-list', true>;
     description: Schema.Attribute.Blocks;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     titulo: Schema.Attribute.String;
@@ -230,6 +256,7 @@ declare module '@strapi/strapi' {
       'shared.banner-interno': SharedBannerInterno;
       'shared.banner-slider': SharedBannerSlider;
       'shared.casos': SharedCasos;
+      'shared.check-list': SharedCheckList;
       'shared.doctores': SharedDoctores;
       'shared.highlight': SharedHighlight;
       'shared.media': SharedMedia;
@@ -237,6 +264,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.servicios': SharedServicios;
+      'shared.servicios-esteticos': SharedServiciosEsteticos;
       'shared.slider': SharedSlider;
       'tratamientos.faq': TratamientosFaq;
       'tratamientos.interna-completa': TratamientosInternaCompleta;
