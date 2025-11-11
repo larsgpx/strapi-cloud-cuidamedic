@@ -46,10 +46,18 @@
       "component": "tratamientos.faq",
       "repeatable": true
     },
+    "casosDeExito": {
+      "type": "component",
+      "component": "shared.casos",
+      "repeatable": true
+    },
     "Seo": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "tituloOtrosServicios": {
+      "type": "string"
     }
   },
   "config": {}

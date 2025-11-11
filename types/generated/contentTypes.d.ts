@@ -1156,6 +1156,40 @@ export interface ApiNosotrosNosotros extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOtroServicioOtroServicio
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'otros_servicios';
+  info: {
+    displayName: 'Otros servicios';
+    pluralName: 'otros-servicios';
+    singularName: 'otro-servicio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::otro-servicio.otro-servicio'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    TiposDeServicio: Schema.Attribute.Enumeration<
+      ['Esteticos', 'Corporales', 'Avanzados', 'General']
+    >;
+    Titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface ApiSucursalSucursal extends Struct.CollectionTypeSchema {
   collectionName: 'sucursales';
   info: {
@@ -1791,6 +1825,7 @@ declare module '@strapi/strapi' {
       'api::mesoterapia-y-cocktail.mesoterapia-y-cocktail': ApiMesoterapiaYCocktailMesoterapiaYCocktail;
       'api::mesoterapia.mesoterapia': ApiMesoterapiaMesoterapia;
       'api::nosotros.nosotros': ApiNosotrosNosotros;
+      'api::otro-servicio.otro-servicio': ApiOtroServicioOtroServicio;
       'api::sucursal.sucursal': ApiSucursalSucursal;
       'api::tecnologia-avanzada.tecnologia-avanzada': ApiTecnologiaAvanzadaTecnologiaAvanzada;
       'api::toxina.toxina': ApiToxinaToxina;

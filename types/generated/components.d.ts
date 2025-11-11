@@ -188,6 +188,7 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    casosDeExito: Schema.Attribute.Component<'shared.casos', true>;
     Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     ImagenBanner: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -203,6 +204,7 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
         number
       >;
     Titulo: Schema.Attribute.String;
+    tituloOtrosServicios: Schema.Attribute.String;
     UrlBoton: Schema.Attribute.String;
   };
 }
