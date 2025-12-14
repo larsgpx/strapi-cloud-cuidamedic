@@ -30,6 +30,9 @@
     "Telefono": {
       "type": "string"
     },
+    "Telefono2": {
+      "type": "string"
+    },
     "Correo": {
       "type": "string"
     },

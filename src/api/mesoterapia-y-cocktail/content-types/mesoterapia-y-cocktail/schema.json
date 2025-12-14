@@ -36,6 +36,9 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "tituloOtrosServicios": {
+      "type": "string"
     }
   }
 }

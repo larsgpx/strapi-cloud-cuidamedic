@@ -247,7 +247,9 @@ export interface TratamientosTratamientos extends Struct.ComponentSchema {
     boton: Schema.Attribute.String;
     Checklist: Schema.Attribute.Component<'shared.check-list', true>;
     description: Schema.Attribute.Blocks;
+    duracion: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    PasosTratamiento: Schema.Attribute.String;
     titulo: Schema.Attribute.String;
   };
 }

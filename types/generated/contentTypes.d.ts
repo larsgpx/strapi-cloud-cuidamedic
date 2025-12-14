@@ -672,6 +672,7 @@ export interface ApiContactoContacto extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Telefono: Schema.Attribute.String;
+    Telefono2: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -989,6 +990,7 @@ export interface ApiLimpiezaFacialLimpiezaFacial
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     subtitulo: Schema.Attribute.Text;
     titulo: Schema.Attribute.String;
+    tituloOtrosServicios: Schema.Attribute.String;
     Tratamientos: Schema.Attribute.Component<'tratamientos.tratamientos', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1077,6 +1079,7 @@ export interface ApiMesoterapiaYCocktailMesoterapiaYCocktail
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     subtitulo: Schema.Attribute.Text;
     titulo: Schema.Attribute.String;
+    tituloOtrosServicios: Schema.Attribute.String;
     Tratamientos: Schema.Attribute.Component<'tratamientos.tratamientos', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1251,6 +1254,7 @@ export interface ApiTecnologiaAvanzadaTecnologiaAvanzada
     SubtituloBanner: Schema.Attribute.Text;
     Titulo: Schema.Attribute.String;
     TituloBanner: Schema.Attribute.String;
+    tituloOtrosServicios: Schema.Attribute.String;
     Tratamientos: Schema.Attribute.Component<
       'tratamientos.tratamiento-especial',
       true

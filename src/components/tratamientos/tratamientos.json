@@ -29,6 +29,12 @@
       "type": "component",
       "component": "shared.check-list",
       "repeatable": true
+    },
+    "duracion": {
+      "type": "string"
+    },
+    "PasosTratamiento": {
+      "type": "string"
     }
   },
   "config": {}
