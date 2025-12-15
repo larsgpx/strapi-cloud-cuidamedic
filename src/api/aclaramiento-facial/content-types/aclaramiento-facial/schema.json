@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "aclaramiento_facials",
+  "info": {
+    "singularName": "aclaramiento-facial",
+    "pluralName": "aclaramiento-facials",
+    "displayName": "Aclaramiento Facial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

@@ -459,6 +459,35 @@ export interface ApiAcidoHialuricoAcidoHialurico
   };
 }
 
+export interface ApiAclaramientoFacialAclaramientoFacial
+  extends Struct.SingleTypeSchema {
+  collectionName: 'aclaramiento_facials';
+  info: {
+    displayName: 'Aclaramiento Facial';
+    pluralName: 'aclaramiento-facials';
+    singularName: 'aclaramiento-facial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Interna: Schema.Attribute.Component<'tratamientos.interna-completa', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::aclaramiento-facial.aclaramiento-facial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -921,6 +950,35 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     UrlEvaluacionGratuita: Schema.Attribute.String;
     whatsappPopUp: Schema.Attribute.String;
+  };
+}
+
+export interface ApiHidratacionProfundaHidratacionProfunda
+  extends Struct.SingleTypeSchema {
+  collectionName: 'hidratacion_profundas';
+  info: {
+    displayName: 'Hidratacion Profunda';
+    pluralName: 'hidratacion-profundas';
+    singularName: 'hidratacion-profunda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Interna: Schema.Attribute.Component<'tratamientos.interna-completa', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hidratacion-profunda.hidratacion-profunda'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1807,6 +1865,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::acido-hialurico.acido-hialurico': ApiAcidoHialuricoAcidoHialurico;
+      'api::aclaramiento-facial.aclaramiento-facial': ApiAclaramientoFacialAclaramientoFacial;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::biorem-corporal.biorem-corporal': ApiBioremCorporalBioremCorporal;
@@ -1822,6 +1881,7 @@ declare module '@strapi/strapi' {
       'api::exosoma.exosoma': ApiExosomaExosoma;
       'api::exosomas-corporal.exosomas-corporal': ApiExosomasCorporalExosomasCorporal;
       'api::global.global': ApiGlobalGlobal;
+      'api::hidratacion-profunda.hidratacion-profunda': ApiHidratacionProfundaHidratacionProfunda;
       'api::home.home': ApiHomeHome;
       'api::limpieza-facial.limpieza-facial': ApiLimpiezaFacialLimpiezaFacial;
       'api::marca.marca': ApiMarcaMarca;

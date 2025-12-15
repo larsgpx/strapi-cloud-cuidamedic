@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "hidratacion_profundas",
+  "info": {
+    "singularName": "hidratacion-profunda",
+    "pluralName": "hidratacion-profundas",
+    "displayName": "Hidratacion Profunda"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}
