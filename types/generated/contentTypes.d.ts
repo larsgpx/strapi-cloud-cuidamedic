@@ -528,7 +528,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: 'Autor';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -560,7 +560,7 @@ export interface ApiBioremCorporalBioremCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'biorem_corporals';
   info: {
-    displayName: 'Biorem bioremodelador Corporal';
+    displayName: 'Bioestimulador Corporal';
     pluralName: 'biorem-corporals';
     singularName: 'biorem-corporal';
   };
@@ -588,7 +588,7 @@ export interface ApiBioremCorporalBioremCorporal
 export interface ApiBioremFacialBioremFacial extends Struct.SingleTypeSchema {
   collectionName: 'biorem_faciales';
   info: {
-    displayName: 'Biorem Bioestimulador Faciales';
+    displayName: 'Bioestimuladores de Col\u00E1geno';
     pluralName: 'biorem-faciales';
     singularName: 'biorem-facial';
   };
@@ -617,7 +617,7 @@ export interface ApiBioremodeladorBioremodelador
   extends Struct.SingleTypeSchema {
   collectionName: 'bioremodeladors';
   info: {
-    displayName: 'Bioremodelador';
+    displayName: 'Bioremodelador de Col\u00E1geno';
     pluralName: 'bioremodeladors';
     singularName: 'bioremodelador';
   };
@@ -741,7 +741,7 @@ export interface ApiEnzimaCorporalEnzimaCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'enzimas_corporales';
   info: {
-    displayName: 'Enzimas Corporales';
+    displayName: 'Enzimas Recombinantes corporales';
     pluralName: 'enzimas-corporales';
     singularName: 'enzima-corporal';
   };
@@ -769,7 +769,7 @@ export interface ApiEnzimaCorporalEnzimaCorporal
 export interface ApiEnzimaFacialEnzimaFacial extends Struct.SingleTypeSchema {
   collectionName: 'enzimas_faciales';
   info: {
-    displayName: 'Enzimas Faciales';
+    displayName: 'Enzimas Recombinantes Faciales';
     pluralName: 'enzimas-faciales';
     singularName: 'enzima-facial';
   };
@@ -890,7 +890,7 @@ export interface ApiExosomasCorporalExosomasCorporal
   extends Struct.SingleTypeSchema {
   collectionName: 'exosomas_corporales';
   info: {
-    displayName: 'Exosomas Corporales';
+    displayName: 'Aclaramiento Corporal';
     pluralName: 'exosomas-corporales';
     singularName: 'exosomas-corporal';
   };
@@ -927,6 +927,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    Blog: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1115,7 +1116,7 @@ export interface ApiMesoterapiaYCocktailMesoterapiaYCocktail
   extends Struct.SingleTypeSchema {
   collectionName: 'mesoterapia_y_cocktails';
   info: {
-    displayName: 'Mesoterapia y Cocktails';
+    displayName: 'Tratamientos Regenerativos';
     pluralName: 'mesoterapia-y-cocktails';
     singularName: 'mesoterapia-y-cocktail';
   };
@@ -1148,7 +1149,7 @@ export interface ApiMesoterapiaYCocktailMesoterapiaYCocktail
 export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
   collectionName: 'mesoterapias';
   info: {
-    displayName: 'Mesoterapias Faciales';
+    displayName: 'NCTF';
     pluralName: 'mesoterapias';
     singularName: 'mesoterapia';
   };
@@ -1176,7 +1177,7 @@ export interface ApiMesoterapiaMesoterapia extends Struct.SingleTypeSchema {
 export interface ApiNosotrosNosotros extends Struct.SingleTypeSchema {
   collectionName: 'nosotross';
   info: {
-    displayName: 'SobreNosotros';
+    displayName: 'Sobre Nosotros';
     pluralName: 'nosotross';
     singularName: 'nosotros';
   };
@@ -1288,7 +1289,7 @@ export interface ApiTecnologiaAvanzadaTecnologiaAvanzada
   extends Struct.SingleTypeSchema {
   collectionName: 'tecnologia_avanzadas';
   info: {
-    displayName: 'Exion';
+    displayName: 'Terapias de Radiofrecuencia';
     pluralName: 'tecnologia-avanzadas';
     singularName: 'tecnologia-avanzada';
   };
@@ -1326,7 +1327,7 @@ export interface ApiTecnologiaAvanzadaTecnologiaAvanzada
 export interface ApiToxinaToxina extends Struct.SingleTypeSchema {
   collectionName: 'toxinas';
   info: {
-    displayName: 'Toxina';
+    displayName: 'Toxina Botul\u00EDnica';
     pluralName: 'toxinas';
     singularName: 'toxina';
   };

@@ -52,6 +52,9 @@
     },
     "whatsappPopUp": {
       "type": "string"
+    },
+    "Blog": {
+      "type": "boolean"
     }
   }
 }
